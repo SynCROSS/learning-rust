@@ -16,7 +16,13 @@ fn main() {
             .expect("Failed to Read Line");
 
         // * Rust allows us to shadow the previous value with a new one
-        let number: u32 = number.trim().parse().expect("Please Type a Number!");
+        let number: u32 = match number.trim().parse() {
+            Ok(num) => num,
+            Err(e) => {
+                println!("Error: {}", e);
+                continue;
+            }
+        };
         println!("You Guessed : {}", number);
 
         match number.cmp(&secret_number) {
