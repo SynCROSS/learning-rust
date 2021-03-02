@@ -1,35 +1,7 @@
-use std::io::{self, Write};
-
 fn main() {
-    print!("Length: ");
-    io::stdout().flush().unwrap();
-    let mut input2 = String::new();
-    io::stdin()
-        .read_line(&mut input2)
-        .expect("Error has Occurred.");
-    let length = match input2.trim().parse() {
-        Ok(num) => num,
-        Err(e) => {
-            println!("Error: {}", e);
-            0
-        }
-    };
+    let v = vec![1, 2, 3];
 
-    fibonacci(length);
-}
+    let v2 = v;
 
-fn fibonacci(num: i64) {
-    let mut pre_tmp = 1;
-    let mut tmp = 1;
-    let mut i = 0;
-
-    loop {
-        i = tmp + pre_tmp;
-        println!("{} {} {}", pre_tmp, tmp, i);
-        pre_tmp = tmp;
-        tmp = i;
-        if i > num {
-            break;
-        };
-    }
+    println!("v[0] is: {}", v[0]); // ! Error, Because v's ownership moved to v2;
 }
