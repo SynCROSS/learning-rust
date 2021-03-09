@@ -1,11 +1,14 @@
 fn main() {
-    // * Except For the Rust Primitive Types,
-    // * The Rest(Vec, String, etc) Have NO Copy Trait.
-    // * Copy Trait is Copyable Trait.
+    let s1 = String::from("hello");
 
-    let v = vec![1, 2, 3];
+    let len = calculate_length(&s1);
 
-    let v2 = &v; // * However, if it was assigned an reference, there is no error.
-
-    println!("v[0] is: {}", v[0]); // * v[0] is: 1
+    println!("The length of '{}' is {}.", s1, len);
 }
+
+fn calculate_length(s: &String) -> usize {
+    // * s is a reference to a String
+    s.len()
+} // * Here, s goes out of scope.
+  // * But because it does not have ownership of
+  // * what it refers to, nothing happens.
