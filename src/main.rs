@@ -1,11 +1,9 @@
 fn main() {
-	let reference_to_nothing = dangle();
+    // *  A string slice is a reference to part of a String, and it looks like this:
+    let s = String::from("hello world");
+
+    let hello = &s[0..5];
+    let world = &s[6..11];
+
+    println!("{} {}", hello, world);
 }
-
-fn dangle() -> &String { // function dangle returns a reference to a String
-
-    let s = String::from("hello"); // s is a new String
-
-    &s // we return a reference to the String, s
-} // Here, s goes out of scope, and is dropped. Its memory goes away.
-  // ! Error
