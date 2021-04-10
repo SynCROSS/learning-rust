@@ -1,14 +1,8 @@
+#![allow(unused)]
 fn main() {
-    struct Person {
-        name: String,
-        age: i8,
-    }
+    struct Color(i32, i32, i32);
+    struct Point(i32, i32, i32);
 
-    let person1 = Person {
-        name: String::from("SynCROSS"),
-        age: 18,
-    };
-
-    println!("Name: {}", person1.name);
-    println!("Age: {}", person1.age)
+    let black = Color(0, 0, 0);
+    let origin = Point(0, 0, 0);
 }
