@@ -1,6 +1,25 @@
-// #![allow(unused)]
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
 fn main() {
-    struct Color(i32, i32, i32);
-    let black = Color(0, 0, 0);
-    println!("Red: {}, Green: {}, Blue: {}", &black.0, &black.1, &black.2)
+    let rect1 = Rectangle {
+        width: 10,
+        height: 10,
+    };
+
+    println!(
+        "The area of the rectangle is {} x {} = {} square pixels.",
+        rect1.width,
+        rect1.height,
+        rect1.area()
+    );
 }
