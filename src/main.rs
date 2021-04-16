@@ -1,24 +1,10 @@
 fn main() {
-    enum IP {
-        V4,
-        V6,
+    let some_u8_value = Some(3);
+    // *  match some_u8_value {
+    // *    Some(3) => println!("three"),
+    // *    _ => (),
+    // * }
+    if let Some(3) = some_u8_value {
+        println!("three");
     }
-
-    struct IpAddr {
-        kind: IP,
-        address: String,
-    }
-
-    let home = IpAddr {
-        kind: IP::V4,
-        address: String::from("127.0.0.1"),
-    };
-
-    let loopback = IpAddr {
-        kind: IP::V6,
-        address: String::from("::1"),
-    };
-
-    println!("localhost: {:?}", &home.address);
-    println!("loopback: {:?}", &loopback.address);
 }
