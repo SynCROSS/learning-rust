@@ -1,5 +1,6 @@
 mod front_of_house {
-    // snip
+    // snip/;
+
     pub mod serving {
         fn take_order() {}
 
@@ -8,6 +9,7 @@ mod front_of_house {
         fn take_payment() {}
     }
 }
+
 mod back_of_house {
     fn fix_incorrect_order() {
         cook_order();
