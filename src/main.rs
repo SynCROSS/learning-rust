@@ -1,10 +1,7 @@
 fn main() {
-    let some_u8_value = Some(3);
-    // *  match some_u8_value {
-    // *    Some(3) => println!("three"),
-    // *    _ => (),
-    // * }
-    if let Some(3) = some_u8_value {
-        println!("three");
+    let v = vec![1, 2, 3, 4, 5];
+
+    for i in &v {
+        println!("{}", i);
     }
 }
