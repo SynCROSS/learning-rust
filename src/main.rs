@@ -1,7 +1,10 @@
 fn main() {
-    let v = vec![1, 2, 3, 4, 5];
+    let data = "initial contents";
 
-    for i in &v {
-        println!("{}", i);
-    }
+    let s = data.to_string();
+    println!("{}", s);
+
+    // * the method also works on a literal directly:
+    let s = "initial contents".to_string();
+    println!("{}", s);
 }
