@@ -1,34 +1,27 @@
+fn print_string(string: &str) {
+    for c in string.chars() {
+        print!("{}", c);
+        std::io::Write::flush(&mut std::io::stdout()).unwrap();
+    }
+    println!();
+}
+
 fn main() {
-    let hello = String::from("السلام عليكم");
-    println!("{}", hello);
+    let hellos = [
+        "السلام عليكم",
+        "Dobrý den",
+        "Hello",
+        "שָׁלוֹם",
+        "नमस्ते",
+        "こんにちは",
+        "안녕하세요",
+        "你好",
+        "Olá",
+        "Здравствуйте",
+        "Hola",
+    ];
 
-    let hello = String::from("Dobrý den");
-    println!("{}", hello);
-
-    let hello = String::from("Hello");
-    println!("{}", hello);
-
-    let hello = String::from("שָׁלוֹם");
-    println!("{}", hello);
-
-    let hello = String::from("नमस्ते");
-    println!("{}", hello);
-
-    let hello = String::from("こんにちは");
-    println!("{}", hello);
-
-    let hello = String::from("안녕하세요");
-    println!("{}", hello);
-
-    let hello = String::from("你好");
-    println!("{}", hello);
-
-    let hello = String::from("Olá");
-    println!("{}", hello);
-
-    let hello = String::from("Здравствуйте");
-    println!("{}", hello);
-
-    let hello = String::from("Hola");
-    println!("{}", hello);
+    for hello in hellos.iter() {
+        print_string(hello);
+    }
 }
