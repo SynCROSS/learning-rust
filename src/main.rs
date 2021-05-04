@@ -1,27 +1,13 @@
-fn print_string(string: &str) {
-    for c in string.chars() {
-        print!("{}", c);
-        std::io::Write::flush(&mut std::io::stdout()).unwrap();
-    }
-    println!();
-}
-
 fn main() {
-    let hellos = [
-        "السلام عليكم",
-        "Dobrý den",
-        "Hello",
-        "שָׁלוֹם",
-        "नमस्ते",
-        "こんにちは",
-        "안녕하세요",
-        "你好",
-        "Olá",
-        "Здравствуйте",
-        "Hola",
-    ];
+    let field_name = String::from("Favorite color");
+    let field_value = String::from("Blue");
 
-    for hello in hellos.iter() {
-        print_string(hello);
+    let mut map = std::collections::HashMap::new();
+    map.insert(field_name, field_value);
+    // * field_name and field_value are invalid at this point, try using them and
+    // * see what compiler error you get!
+
+    for (key, value) in &map {
+        println!("{}: {}", key, value);
     }
 }
