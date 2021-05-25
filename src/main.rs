@@ -1,8 +1,10 @@
 fn main() {
-    let mut scores = std::collections::HashMap::new();
+    let f = std::fs::File::open("hello.txt");
 
-    scores.insert(String::from("Blue"), 10);
-    scores.insert(String::from("Blue"), 25);
+    let f = match f {
+        Ok(file) => file,
+        Err(error) => panic!("Problem opening the file: {:?}", error),
+    };
 
-    println!("{:?}", scores);
+    println!("{:?}", f);
 }
