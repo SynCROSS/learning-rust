@@ -1,15 +1,37 @@
+fn largest_i32(list: &[i32]) -> i32 {
+    let mut largest = list[0];
+
+    for &item in list {
+        if item > largest {
+            largest = item;
+        }
+    }
+
+    largest
+}
+
+fn largest_char(list: &[char]) -> char {
+    let mut largest = list[0];
+
+    for &item in list {
+        if item > largest {
+            largest = item;
+        }
+    }
+
+    largest
+}
 
 fn main() {
-use std::fs::File;
-use std::io;
-use std::io::Read;
+    let number_list = vec![34, 50, 25, 100, 65];
 
-fn read_username_from_file() -> Result<String, io::Error> {
-    let mut s = String::new();
+    let result = largest_i32(&number_list);
+    println!("The largest number is {}", result);
+    assert_eq!(result, 100);
 
-    File::open("hello.txt")?.read_to_string(&mut s)?;
+    let char_list = vec!['y', 'm', 'a', 'q'];
 
-    Ok(s)
-}
-  println!("{:?}", read_username_from_file());
+    let result = largest_char(&char_list);
+    println!("The largest char is {}", result);
+    assert_eq!(result, 'y');
 }
