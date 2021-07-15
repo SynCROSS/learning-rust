@@ -28,9 +28,10 @@ impl Summary for Tweet {
     }
 }
 
-// * The impl Trait syntax works for straightforward cases
-// * but is actually syntax sugar for a longer form,
-// * which is called a trait bound.
-pub fn notify<T: Summary>(item: &T) {
+// * We can also specify more than one trait bound.
+// * Say we wanted notify to use display formatting on item as well as the summarize method:
+// * we specify in the notify definition that item must implement both Display and Summary.
+// * We can do so using the + syntax:
+pub fn notify(item: &(impl Summary + Display)) {
     println!("Breaking news! {}", item.summarize());
 }
