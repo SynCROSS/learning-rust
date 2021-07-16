@@ -28,10 +28,7 @@ impl Summary for Tweet {
     }
 }
 
-// * We can also specify more than one trait bound.
-// * Say we wanted notify to use display formatting on item as well as the summarize method:
-// * we specify in the notify definition that item must implement both Display and Summary.
-// * We can do so using the + syntax:
-pub fn notify(item: &(impl Summary + Display)) {
+// * It works Same too
+pub fn notify<T: Summary + Display>(item: &T) {
     println!("Breaking news! {}", item.summarize());
 }
