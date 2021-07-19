@@ -28,7 +28,9 @@ impl Summary for Tweet {
     }
 }
 
-// * It works Same too
-pub fn notify<T: Summary + Display>(item: &T) {
+pub fn notify<T>(item: &T)
+where
+    T: Summary,
+{
     println!("Breaking news! {}", item.summarize());
 }
