@@ -12,22 +12,29 @@ fn main() {
         start_number, end_number
     );
 
-    let random_number = rand::thread_rng().gen_range(start_number, end_number);
-    println!("Number Is Selected.");
-    println!("Please Input Your Guess.");
+    loop {
+        let random_number = rand::thread_rng().gen_range(start_number, end_number);
 
-    let mut guess = String::new();
-    stdin().read_line(&mut guess).expect("Failed To Read Line");
+        println!("Number Is Selected.");
+        println!("Please Input Your Guess.");
 
-    // * Rust Allows To Shadow The Previous One Which Has Same Name
-    let guess = guess.trim().parse::<u32>().expect("Please Type A Number");
+        let mut guess = String::new();
 
-    match guess.cmp(&random_number) {
-        Ordering::Greater => println!("It's Smaller Than Yours"),
-        Ordering::Less => println!("It's Bigger Than Yours"),
-        Ordering::Equal => println!("It's Same Number, You Win"),
+        stdin().read_line(&mut guess).expect("Failed To Read Line");
+
+        // * Rust Allows To Shadow The Previous One Which Has Same Name
+        let guess = guess.trim().parse::<u32>().expect("Please Type A Number");
+
+        match guess.cmp(&random_number) {
+            Ordering::Greater => println!("It's Smaller Than Yours"),
+            Ordering::Less => println!("It's Bigger Than Yours"),
+            Ordering::Equal => {
+                println!("It's Same Number, You Win");
+                break;
+            }
+        }
+
+        println!("Selected Number: {}", random_number);
+        println!("Your Guess: {}", guess);
     }
-
-    println!("Selected Number: {}", random_number);
-    println!("Your Guess: {}", guess);
 }
