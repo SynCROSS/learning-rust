@@ -22,8 +22,17 @@ fn main() {
 
         stdin().read_line(&mut guess).expect("Failed To Read Line");
 
-        // * Rust Allows To Shadow The Previous One Which Has Same Name
-        let guess = guess.trim().parse::<u32>().expect("Please Type A Number");
+        // * Rust Allows To Shadow The Previous One Which Has Same Name.
+
+        // * 'parse' Method Returns Enum Of 'Result' Type That Has Variants 'Ok' And 'Err',
+        // * So 'match' Can Be Used Instead Of 'expect' Method.
+        let guess = match guess.trim().parse::<u32>() {
+            Ok(number) => number,
+            Err(e) => {
+                println!("Error: {}", e);
+                continue;
+            }
+        };
 
         match guess.cmp(&random_number) {
             Ordering::Greater => println!("It's Smaller Than Yours"),
