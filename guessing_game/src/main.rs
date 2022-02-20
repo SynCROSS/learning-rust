@@ -12,10 +12,10 @@ fn main() {
         start_number, end_number
     );
 
-    loop {
-        let random_number = rand::thread_rng().gen_range(start_number, end_number);
+    let random_number = rand::thread_rng().gen_range(start_number..=end_number);
+    println!("Number Is Selected.");
 
-        println!("Number Is Selected.");
+    loop {
         println!("Please Input Your Guess.");
 
         let mut guess = String::new();
@@ -38,12 +38,11 @@ fn main() {
             Ordering::Greater => println!("It's Smaller Than Yours"),
             Ordering::Less => println!("It's Bigger Than Yours"),
             Ordering::Equal => {
+                println!("Selected Number: {}", random_number);
+                println!("Your Guess: {}", guess);
                 println!("It's Same Number, You Win");
                 break;
             }
         }
-
-        println!("Selected Number: {}", random_number);
-        println!("Your Guess: {}", guess);
     }
 }
