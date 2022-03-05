@@ -1,3 +1,5 @@
+#[warn(unused_variable)]
+
 fn main() {
     // * Integer Type
 
@@ -17,4 +19,8 @@ fn main() {
     // * Octal              0o77
     // * Binary             0b1111_0000
     // * Byte (u8 only)     b'A'
+
+    let x = 2.0; // * f64, Default Float Type
+
+    let y: f32 = 3.0; // * f32, The Other Float Type
 }
