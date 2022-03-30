@@ -20,7 +20,15 @@ fn main() {
     // * Binary             0b1111_0000
     // * Byte (u8 only)     b'A'
 
+    // * Float Type
+
     let x = 2.0; // * f64, Default Float Type
 
     let y: f32 = 3.0; // * f32, The Other Float Type
+
+    // * Boolean Type
+
+    let t = true;
+
+    let f: bool = false; // * with explicit type annotation
 }
