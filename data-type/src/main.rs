@@ -31,4 +31,12 @@ fn main() {
     let t = true;
 
     let f: bool = false; // * with explicit type annotation
+
+    // * Character Type
+
+    let c = 'z';
+
+    let z = 'ℤ';
+
+    let heart_eyed_cat = '😻';
 }
