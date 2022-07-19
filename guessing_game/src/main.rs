@@ -35,8 +35,8 @@ fn main() {
         };
 
         match guess.cmp(&random_number) {
-            Ordering::Greater => println!("It's Smaller Than Yours"),
-            Ordering::Less => println!("It's Bigger Than Yours"),
+            Ordering::Greater => println!("It's Less Than Yours"),
+            Ordering::Less => println!("It's Greater Than Yours"),
             Ordering::Equal => {
                 println!("Selected Number: {}", random_number);
                 println!("Your Guess: {}", guess);
