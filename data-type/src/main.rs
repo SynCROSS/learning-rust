@@ -39,4 +39,7 @@ fn main() {
     let z = 'ℤ';
 
     let heart_eyed_cat = '😻';
+
+    // *  Tuple Type
+    let tup: (i32, f64, u8) = (500, 6.4, 1); // Tuple Can Contain Various Types
 }
