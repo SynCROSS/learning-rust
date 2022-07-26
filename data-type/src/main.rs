@@ -30,7 +30,7 @@ fn main() {
 
     let t = true;
 
-    let f: bool = false; // * with explicit type annotation
+    let f: bool = false; // * Declaration With Explicit Type Annotation
 
     // * Character Type
 
